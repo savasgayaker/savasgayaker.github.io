@@ -1,1 +1,57 @@
+{
+  "news": [
+    {
+      "date": "2026-01-22",
+      "title": "Duyuru başlığı 1",
+      "excerpt": "Kısa açıklama. Dış linke tıklanınca ilgili sayfaya gider.",
+      "url": "https://example.com"
+    },
+    {
+      "date": "2026-01-10",
+      "title": "Duyuru başlığı 2",
+      "excerpt": "Kısa açıklama.",
+      "url": "https://example.com"
+    },
+    {
+      "date": "2025-12-30",
+      "title": "Duyuru başlığı 3",
+      "excerpt": "Kısa açıklama.",
+      "url": "https://example.com"
+    }
+  ],
+  "posts": [
+    {
+      "date": "2026-01-22",
+      "category": "Ekonometri",
+      "tag": "Zaman Serileri",
+      "title": "İlk yazı başlığı",
+      "excerpt": "Bu yazının 1-2 cümlelik özeti.",
+      "url": "/blog/posts/2026-01-22-ilk-yazi.html"
+    },
+    {
+      "date": "2026-01-15",
+      "category": "E-Ticaret",
+      "tag": "Veri",
+      "title": "E-ticaret istatistikleri üzerine notlar",
+      "excerpt": "Kısa özet.",
+      "url": "/blog/posts/2026-01-15-eticaret-not.html"
+    },
+    {
+      "date": "2026-01-05",
+      "category": "Ekonometri",
+      "tag": "Öngörü",
+      "title": "Model değerlendirme: pratik yaklaşım",
+      "excerpt": "Kısa özet.",
+      "url": "/blog/posts/2026-01-05-model-degerleme.html"
+    },
+    {
+      "date": "2025-12-20",
+      "category": "E-Ticaret",
+      "tag": "Danışmanlık",
+      "title": "KOBİ’ler için veri danışmanlığı çerçevesi",
+      "excerpt": "Kısa özet.",
+      "url": "/blog/posts/2025-12-20-kobi-danismanlik.html"
+    }
+  ]
+}
 
