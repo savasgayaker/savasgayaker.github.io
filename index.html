@@ -8,13 +8,28 @@
   <meta name="description" content="Dr. Öğr. Üyesi Savaş Gayaker — Ekonometri, zaman serileri, öngörü, veri analitiği; e-ticaret veri danışmanlığı ve istatistik üretimi." />
   <meta name="theme-color" content="#0b1220" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Savaş Gayaker | Akademi & E-Ticaret Veri Danışmanlığı" />
   <meta property="og:description" content="Ekonometri/öngörü çalışmaları ve e-ticaret veri analitiği & danışmanlık." />
   <meta property="og:type" content="website" />
 
-  <!-- External CSS -->
   <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <!-- Bu sayfaya özel küçük ek: sağ panelde görselin düzgün sığması -->
+  <style>
+    .hero-photo{
+      width:100%;
+      height:100%;
+      min-height: 320px;            /* sağ panelin minimum yüksekliği */
+      object-fit: contain;          /* KESMEYİ engeller */
+      background: rgba(15,26,46,.35);
+      border-radius: 16px;
+      border: 1px solid rgba(34,49,85,.75);
+      display:block;
+    }
+    @media (max-width: 860px){
+      .hero-photo{ min-height: 220px; }
+    }
+  </style>
 </head>
 
 <body>
@@ -31,7 +46,6 @@
           </div>
         </a>
 
-        <!-- Mobil menü butonu -->
         <button class="menu-btn" type="button" onclick="toggleMenu()">Menü</button>
 
         <nav id="menu" class="menu" aria-label="Ana menü">
@@ -47,10 +61,10 @@
   </header>
 
   <main id="icerik" class="wrap">
-    <!-- HERO -->
     <section class="hero">
       <div class="hero-grid">
 
+        <!-- SOL PANEL -->
         <div class="panel">
           <div class="panel-inner">
             <div class="kicker"><span class="dot"></span> Dr. Öğr. Üyesi</div>
@@ -58,9 +72,9 @@
             <h1>Akademik üretim ve sahada veri odaklı danışmanlık.</h1>
 
             <p>
-              Zaman serileri, öngörü ve uygulamalı ekonometrik modelleme üzerinde çalışıyorum.
+              Zaman serileri, öngörü ve uygulamalı ekonometrik modelleme üzerinde çalışıyor.
               Aynı zamanda e-ticaret ekosisteminde veri yapıları, istatistik üretimi ve karar destek
-              süreçlerine yönelik danışmanlık faaliyetleri yürütüyorum.
+              süreçlerine yönelik danışmanlık faaliyetleri yürütüyor.
             </p>
 
             <div class="cta-row">
@@ -97,72 +111,42 @@
           </div>
         </div>
 
-        <aside class="panel" aria-label="Öne çıkanlar">
-          <div class="panel-inner">
-            <h2 style="font-size:18px;">Hızlı bağlantılar</h2>
-
-            <!-- SABİT KÜÇÜK GÖRSEL -->
+        <!-- SAĞ PANEL: SADECE FOTO -->
+        <aside class="panel" aria-label="Görsel alan">
+          <div class="panel-inner" style="height:100%;">
             <img
-              src="/assets/img/slider/slide3.jpeg"
-              alt="Hızlı bağlantılar görseli"
-              class="quick-image"
+              src="/assets/img/slider/slide1.jpeg"
+              alt="Savaş Gayaker"
+              class="hero-photo"
             />
-
-            <div class="grid-2">
-              <a class="card" href="/akademi/publications.html">
-                <div class="meta">Akademi</div>
-                <h3>Yayınlar</h3>
-                <p>Makale, bildiri ve raporlar.</p>
-              </a>
-
-              <a class="card" href="/consulting/services.html">
-                <div class="meta">Danışmanlık</div>
-                <h3>Hizmetler</h3>
-                <p>Teklif formatında hizmet paketleri.</p>
-              </a>
-            </div>
-
-            <div style="height:12px"></div>
-
-            <a class="card" href="/news/">
-              <div class="meta">Güncel</div>
-              <h3>Haberler</h3>
-              <p>Duyurular ve bağlantılar.</p>
-            </a>
-
           </div>
         </aside>
 
       </div>
     </section>
 
-    <!-- SON HABERLER -->
+    <!-- (İstersen buradan sonrası kalsın ya da kaldırırız) -->
     <section class="section">
       <h2>Son Haberler</h2>
-
       <div id="newsMount" class="grid-3">
         <div class="card">
           <h3>Yükleniyor…</h3>
           <p>Haberler birazdan görünecek.</p>
         </div>
       </div>
-
       <div style="margin-top:10px">
         <a class="btn" href="/news/">Tüm haberler</a>
       </div>
     </section>
 
-    <!-- SON YAZILAR -->
     <section class="section">
       <h2>Son Yazılar</h2>
-
       <div id="postsMount" class="grid-3">
         <div class="card">
           <h3>Yükleniyor…</h3>
           <p>Yazılar birazdan görünecek.</p>
         </div>
       </div>
-
       <div style="margin-top:10px">
         <a class="btn primary" href="/blog/">Tüm yazılar</a>
       </div>
@@ -179,23 +163,24 @@
           <a href="/consulting/">Danışmanlık</a>
         </div>
       </div>
-
       <div class="small" style="margin-top:8px;">
         Statik site (GitHub Pages). Hızlı, temiz, mobil uyumlu.
       </div>
     </footer>
   </main>
 
-  <!-- Menü toggle: site.js yoksa bile çalışsın -->
   <script>
+    // Menü toggle (site.js olsa da olmasa da çalışır)
     function toggleMenu(){
       const menu = document.getElementById("menu");
       if(!menu) return;
       menu.classList.toggle("open");
     }
+    // Footer yıl
+    const y = document.getElementById("year");
+    if(y) y.textContent = new Date().getFullYear();
   </script>
 
-  <!-- External JS -->
   <script src="/assets/js/site.js"></script>
 </body>
 </html>
