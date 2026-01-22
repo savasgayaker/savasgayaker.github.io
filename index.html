@@ -3,254 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Savaş Gayaker | Ekonometri & Veri Analitiği</title>
-  <meta name="description" content="Dr. Öğr. Üyesi Savaş Gayaker — Ekonometri, zaman serileri, öngörü, veri analitiği. Yayınlar, projeler, dersler ve iletişim." />
+
+  <title>Savaş Gayaker | Akademi & E-Ticaret Veri Danışmanlığı</title>
+  <meta name="description" content="Dr. Öğr. Üyesi Savaş Gayaker — Ekonometri, zaman serileri, öngörü, veri analitiği; e-ticaret veri danışmanlığı ve istatistik üretimi." />
   <meta name="theme-color" content="#0b1220" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Savaş Gayaker | Ekonometri & Veri Analitiği" />
-  <meta property="og:description" content="Zaman serileri, öngörü, uygulamalı ekonometrik modelleme ve veri analitiği." />
+  <meta property="og:title" content="Savaş Gayaker | Akademi & E-Ticaret Veri Danışmanlığı" />
+  <meta property="og:description" content="Ekonometri/öngörü çalışmaları ve e-ticaret veri analitiği & danışmanlık." />
   <meta property="og:type" content="website" />
 
-  <style>
-    :root{
-      --bg:#0b1220;
-      --panel:#0f1a2e;
-      --card:#0e1930cc;
-      --text:#e7eefc;
-      --muted:#a9b7d6;
-      --brand:#7dd3fc;   /* sky */
-      --brand2:#a78bfa;  /* violet */
-      --line:#223155;
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --radius:16px;
-      --max:1080px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(1000px 700px at 10% 0%, rgba(125, 211, 252, .18), transparent 60%),
-        radial-gradient(900px 650px at 95% 10%, rgba(167, 139, 250, .14), transparent 55%),
-        radial-gradient(700px 550px at 50% 110%, rgba(125, 211, 252, .10), transparent 60%),
-        var(--bg);
-      line-height:1.6;
-    }
-
-    a{color:inherit; text-decoration:none}
-    a:hover{opacity:.92}
-
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(11,18,32,.85), rgba(11,18,32,.55));
-      border-bottom:1px solid rgba(34,49,85,.65);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:220px;
-    }
-    .logo{
-      width:38px; height:38px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(125,211,252,.9), rgba(167,139,250,.9));
-      box-shadow: 0 10px 22px rgba(0,0,0,.25);
-    }
-    .brand h1{
-      margin:0; font-size:14px; font-weight:700; letter-spacing:.2px;
-    }
-    .brand span{
-      display:block; font-size:12px; color:var(--muted); font-weight:500;
-    }
-    .links{
-      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
-      font-size:13px; color:var(--muted);
-    }
-    .links a{
-      padding:8px 10px; border-radius:10px;
-      border:1px solid transparent;
-    }
-    .links a:hover{
-      border-color: rgba(34,49,85,.8);
-      background: rgba(15,26,46,.55);
-      color: var(--text);
-    }
-
-    .hero{
-      padding:46px 0 24px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr; }
-      .brand{min-width:auto}
-    }
-
-    .panel{
-      background: linear-gradient(180deg, rgba(14,25,48,.78), rgba(15,26,46,.45));
-      border:1px solid rgba(34,49,85,.75);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .panel-inner{padding:22px}
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      color: var(--muted);
-      font-size:12px; font-weight:600;
-      letter-spacing:.35px;
-      text-transform:uppercase;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, var(--brand), var(--brand2));
-      box-shadow: 0 0 18px rgba(125,211,252,.25);
-    }
-    .hero h2{
-      margin:10px 0 8px;
-      font-size:34px;
-      line-height:1.15;
-      letter-spacing:-.4px;
-    }
-    .hero p{
-      margin:0 0 16px;
-      color: var(--muted);
-      font-size:15px;
-      max-width: 62ch;
-    }
-
-    .cta-row{
-      display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius: 12px;
-      border:1px solid rgba(34,49,85,.85);
-      background: rgba(15,26,46,.6);
-      color: var(--text);
-      font-weight:700;
-      font-size:13px;
-      cursor:pointer;
-    }
-    .btn.primary{
-      border-color: rgba(125,211,252,.35);
-      background: linear-gradient(135deg, rgba(125,211,252,.20), rgba(167,139,250,.12));
-    }
-    .btn:hover{transform: translateY(-1px)}
-    .btn:active{transform: translateY(0px)}
-    .icon{
-      width:16px; height:16px; display:inline-block;
-      background: currentColor;
-      mask-size:contain; -webkit-mask-size:contain;
-      mask-repeat:no-repeat; -webkit-mask-repeat:no-repeat;
-      mask-position:center; -webkit-mask-position:center;
-      opacity:.9;
-    }
-    .i-arrow{ -webkit-mask-image: linear-gradient(#000,#000); mask-image: linear-gradient(#000,#000); }
-    /* Basit ikonlar (SVG mask) */
-    .i-link{
-      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0ZM7 17a4 4 0 0 1 0-5.66l2.12-2.12a4 4 0 0 1 5.66 0 1 1 0 0 1-1.41 1.41 2 2 0 0 0-2.83 0L8.41 12.76a2 2 0 0 0 2.83 2.83 1 1 0 1 1 1.41 1.41A4 4 0 0 1 7 17Zm10-10a4 4 0 0 1 0 5.66l-2.12 2.12a4 4 0 0 1-5.66 0 1 1 0 0 1 1.41-1.41 2 2 0 0 0 2.83 0l2.12-2.12a2 2 0 0 0-2.83-2.83 1 1 0 1 1-1.41-1.41A4 4 0 0 1 17 7Z"/></svg>');
-      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M10.59 13.41a1 1 0 0 1 0-1.41l3-3a1 1 0 1 1 1.41 1.41l-3 3a1 1 0 0 1-1.41 0ZM7 17a4 4 0 0 1 0-5.66l2.12-2.12a4 4 0 0 1 5.66 0 1 1 0 0 1-1.41 1.41 2 2 0 0 0-2.83 0L8.41 12.76a2 2 0 0 0 2.83 2.83 1 1 0 1 1 1.41 1.41A4 4 0 0 1 7 17Zm10-10a4 4 0 0 1 0 5.66l-2.12 2.12a4 4 0 0 1-5.66 0 1 1 0 0 1 1.41-1.41 2 2 0 0 0 2.83 0l2.12-2.12a2 2 0 0 0-2.83-2.83 1 1 0 1 1-1.41-1.41A4 4 0 0 1 17 7Z"/></svg>');
-    }
-    .i-mail{
-      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>');
-      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>');
-    }
-    .i-doc{
-      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm1 7V3.5L19.5 9H15ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>');
-      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="black" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm1 7V3.5L19.5 9H15ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>');
-    }
-
-    .stat{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:14px;
-    }
-    .pill{
-      border:1px solid rgba(34,49,85,.75);
-      border-radius: 14px;
-      padding:12px 12px;
-      background: rgba(15,26,46,.35);
-    }
-    .pill b{display:block; font-size:13px}
-    .pill small{color:var(--muted)}
-
-    .section{padding:22px 0}
-    .section h3{
-      margin:0 0 12px; font-size:18px; letter-spacing:-.2px;
-    }
-    .grid-3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 900px){
-      .grid-3{grid-template-columns:1fr}
-    }
-
-    .card{
-      background: rgba(15,26,46,.42);
-      border: 1px solid rgba(34,49,85,.75);
-      border-radius: var(--radius);
-      padding:16px;
-      box-shadow: 0 10px 22px rgba(0,0,0,.18);
-    }
-    .card p{margin:8px 0 0; color:var(--muted); font-size:14px}
-    .tagrow{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
-    .tag{
-      font-size:12px;
-      color: var(--muted);
-      border:1px solid rgba(34,49,85,.8);
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(14,25,48,.30);
-    }
-
-    .list{
-      margin:0; padding-left:18px; color:var(--muted); font-size:14px;
-    }
-    .list li{margin:6px 0}
-
-    .footer{
-      padding:24px 0 40px;
-      color: var(--muted);
-      border-top:1px solid rgba(34,49,85,.65);
-      margin-top:18px;
-    }
-    .footer a{color: var(--text)}
-    .split{
-      display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap;
-      font-size:13px;
-    }
-    .notice{
-      font-size:12px; color:rgba(169,183,214,.85);
-    }
-
-    /* Skip link */
-    .skip{
-      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip:focus{
-      position:static; width:auto; height:auto; padding:10px; display:inline-block;
-      background: rgba(15,26,46,.9); border:1px solid rgba(34,49,85,.9); border-radius:12px;
-      margin:10px;
-    }
-  </style>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
 <body>
@@ -259,19 +23,24 @@
   <header class="topbar">
     <div class="wrap">
       <div class="nav">
-        <div class="brand">
+        <a class="brand" href="/index.html">
           <div class="logo" aria-hidden="true"></div>
           <div>
-            <h1>Savaş Gayaker</h1>
-            <span>Ekonometri • Zaman Serileri • Öngörü • Veri Analitiği</span>
+            <p class="brand-title">Savaş Gayaker</p>
+            <p class="brand-sub">Akademi • Ekonometri • E-Ticaret Veri Analitiği</p>
           </div>
-        </div>
+        </a>
 
-        <nav class="links" aria-label="Ana menü">
-          <a href="#hakkimda">Hakkımda</a>
-          <a href="#calismalar">Çalışmalar</a>
-          <a href="#dersler">Dersler</a>
-          <a href="#iletisim">İletişim</a>
+        <!-- Mobil menü butonu (site.js içindeki toggleMenu() çalıştırır) -->
+        <button class="menu-btn" onclick="toggleMenu()">Menü</button>
+
+        <nav id="menu" class="menu" aria-label="Ana menü">
+          <a href="/index.html">Ana Sayfa</a>
+          <a href="/akademi/">Akademi</a>
+          <a href="/consulting/">E-Ticaret & Danışmanlık</a>
+          <a href="/news/">Haberler</a>
+          <a href="/blog/">Yazılar</a>
+          <a href="/contact.html">İletişim</a>
         </nav>
       </div>
     </div>
@@ -281,192 +50,136 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-grid">
+
         <div class="panel">
           <div class="panel-inner">
             <div class="kicker"><span class="dot"></span> Dr. Öğr. Üyesi</div>
-            <h2>Ekonometri, öngörü ve veri analitiğinde ölçülebilir sonuçlar.</h2>
+
+            <h1>Akademik üretim ve sahada veri odaklı danışmanlık.</h1>
+
             <p>
-              Zaman serileri, uygulamalı ekonometrik modelleme ve büyük ölçekli veri analizleri üzerinde çalışıyorum.
-              Akademik üretimi “saha gerçekliği” ile birleştirerek ders, araştırma ve danışmanlık projeleri yürütüyorum.
+              Zaman serileri, öngörü ve uygulamalı ekonometrik modelleme üzerinde çalışıyorum.
+              Aynı zamanda e-ticaret ekosisteminde veri yapıları, istatistik üretimi ve karar destek
+              süreçlerine yönelik danışmanlık faaliyetleri yürütüyorum.
             </p>
 
             <div class="cta-row">
-              <!-- Not: linkleri kendinize göre güncelleyin -->
-              <a class="btn primary" href="#calismalar">
-                <span class="icon i-link" aria-hidden="true"></span>
-                Çalışmaları gör
-              </a>
-              <a class="btn" href="#iletisim">
-                <span class="icon i-mail" aria-hidden="true"></span>
-                İletişime geç
-              </a>
-              <a class="btn" href="assets/cv.pdf">
-                <span class="icon i-doc" aria-hidden="true"></span>
-                CV (PDF)
-              </a>
+              <a class="btn primary" href="/akademi/">Akademi tarafına gir</a>
+              <a class="btn" href="/consulting/">Danışmanlık tarafına gir</a>
+              <a class="btn" href="/blog/">Yazıları oku</a>
+              <a class="btn" href="/assets/cv.pdf">CV (PDF)</a>
             </div>
 
-            <div class="stat" aria-label="Hızlı özet">
-              <div class="pill">
-                <b>Odak</b>
-                <small>Öngörü • TVP/VAR • ML • Uygulamalı Ekonomi</small>
-              </div>
-              <div class="pill">
-                <b>Uygulama</b>
-                <small>R • Python • Veri hattı • Gösterge panelleri</small>
+            <div class="section" style="padding:16px 0 0;">
+              <div class="grid-2">
+                <div class="card">
+                  <h3>Akademi</h3>
+                  <p>Zaman serileri, öngörü, ekonometrik modelleme, yayınlar ve ders materyalleri.</p>
+                  <div class="tags">
+                    <span class="tag">Forecasting</span>
+                    <span class="tag">VAR/TVP</span>
+                    <span class="tag">Uygulamalar</span>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <h3>E-Ticaret & Veri Danışmanlığı</h3>
+                  <p>Veri yapıları, sınıflama/raporlama, istatistik üretimi ve karar destek çerçeveleri.</p>
+                  <div class="tags">
+                    <span class="tag">E-ticaret</span>
+                    <span class="tag">Veri Analitiği</span>
+                    <span class="tag">Danışmanlık</span>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
 
         <aside class="panel" aria-label="Öne çıkanlar">
           <div class="panel-inner">
-            <h3 style="margin:0 0 10px;">Öne çıkanlar</h3>
-            <ul class="list">
-              <li>Akademik yayınlar ve kongre sunumları</li>
-              <li>Öngörü ve zaman serisi uygulamaları</li>
-              <li>Kamu/özel sektör için veri temelli eğitim & danışmanlık</li>
-            </ul>
+            <h2 style="font-size:18px;">Hızlı bağlantılar</h2>
 
-            <div style="height:10px"></div>
+            <div class="grid-2">
+              <a class="card" href="/akademi/publications.html">
+                <div class="meta">Akademi</div>
+                <h3>Yayınlar</h3>
+                <p>Makale, bildiri ve raporlar.</p>
+              </a>
 
-            <div class="card">
-              <b>Bu site ne için?</b>
-              <p>
-                Yayınlar, projeler, ders materyalleri ve iletişim bilgilerini tek yerde toplamak için.
-                Gereksiz süs yok; amaç net.
-              </p>
-              <div class="tagrow">
-                <span class="tag">Forecasting</span>
-                <span class="tag">Time Series</span>
-                <span class="tag">Econometrics</span>
-                <span class="tag">Data Science</span>
-              </div>
+              <a class="card" href="/consulting/services.html">
+                <div class="meta">Danışmanlık</div>
+                <h3>Hizmetler</h3>
+                <p>Teklif formatında hizmet paketleri.</p>
+              </a>
             </div>
+
+            <div style="height:12px"></div>
+
+            <a class="card" href="/news/">
+              <div class="meta">Güncel</div>
+              <h3>Haberler</h3>
+              <p>Duyurular ve bağlantılar.</p>
+            </a>
+
           </div>
         </aside>
+
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="hakkimda" class="section">
-      <h3>Hakkımda</h3>
-      <div class="grid-3">
+    <!-- SON HABERLER -->
+    <section class="section">
+      <h2>Son Haberler</h2>
+
+      <div id="newsMount" class="grid-3">
         <div class="card">
-          <b>Akademik ilgi alanları</b>
-          <p>
-            Zaman serileri, öngörü yöntemleri, yapısal kırılmalar, TVP modelleri, VAR ailesi ve uygulamalı ekonometrik analiz.
-          </p>
+          <h3>Yükleniyor…</h3>
+          <p>Haberler birazdan görünecek.</p>
         </div>
-        <div class="card">
-          <b>Üretim yaklaşımı</b>
-          <p>
-            “Güzel anlatım” yetmez. Modelin varsayımları, veri kalitesi ve sonuçların karar süreçlerine etkisi birlikte ele alınmalıdır.
-          </p>
-        </div>
-        <div class="card">
-          <b>Çalışma biçimi</b>
-          <p>
-            Net hedef → doğru yöntem → tekrarlanabilir kod → raporlanabilir çıktı. Her adım iz bırakmalıdır.
-          </p>
-        </div>
+      </div>
+
+      <div style="margin-top:10px">
+        <a class="btn" href="/news/">Tüm haberler</a>
       </div>
     </section>
 
-    <!-- WORKS -->
-    <section id="calismalar" class="section">
-      <h3>Çalışmalar</h3>
-      <div class="grid-3">
+    <!-- SON YAZILAR -->
+    <section class="section">
+      <h2>Son Yazılar</h2>
+
+      <div id="postsMount" class="grid-3">
         <div class="card">
-          <b>Yayınlar</b>
-          <p>Makale/çalışma listesi ve bağlantılar.</p>
-          <div class="tagrow">
-            <a class="tag" href="publications.html">publications.html</a>
-            <a class="tag" href="https://scholar.google.com" target="_blank" rel="noreferrer">Google Scholar</a>
-          </div>
-        </div>
-        <div class="card">
-          <b>Projeler</b>
-          <p>Veri analitiği ve öngörü projeleri, gösterge panelleri.</p>
-          <div class="tagrow">
-            <a class="tag" href="projects.html">projects.html</a>
-            <a class="tag" href="https://github.com/savasgayaker" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-        </div>
-        <div class="card">
-          <b>Notlar / Kaynaklar</b>
-          <p>Ders notları, örnek kodlar, mini rehberler.</p>
-          <div class="tagrow">
-            <a class="tag" href="notes.html">notes.html</a>
-            <a class="tag" href="#dersler">Dersler</a>
-          </div>
+          <h3>Yükleniyor…</h3>
+          <p>Yazılar birazdan görünecek.</p>
         </div>
       </div>
-    </section>
 
-    <!-- COURSES -->
-    <section id="dersler" class="section">
-      <h3>Dersler</h3>
-      <div class="card">
-        <p style="margin-top:0">
-          Buraya dersleri kısa başlıklarla koyun. Her ders için 1 satır açıklama + materyal linki idealdir.
-        </p>
-        <ul class="list">
-          <li><b>Zaman Serileri / Öngörü:</b> ARIMA, VAR, TVP, volatilite, model değerlendirme.</li>
-          <li><b>Ekonometrik Yöntemler:</b> regresyon, tanı testleri, sağlam standart hatalar, nedensellik.</li>
-          <li><b>Uygulamalı Veri Analizi:</b> R/Python, veri temizleme, tekrarlanabilir raporlama.</li>
-        </ul>
-        <div class="tagrow">
-          <span class="tag">R</span>
-          <span class="tag">Python</span>
-          <span class="tag">EViews/Stata (gerekiyorsa)</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="iletisim" class="section">
-      <h3>İletişim</h3>
-      <div class="grid-3">
-        <div class="card">
-          <b>E-posta</b>
-          <p>
-            <a href="mailto:YOURMAIL@domain.com">YOURMAIL@domain.com</a><br/>
-            <span class="notice">* Burayı kendi adresinizle değiştirin.</span>
-          </p>
-        </div>
-        <div class="card">
-          <b>Profesyonel</b>
-          <p>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a><br/>
-            <a href="https://github.com/savasgayaker" target="_blank" rel="noreferrer">GitHub</a>
-          </p>
-        </div>
-        <div class="card">
-          <b>Konum</b>
-          <p>Ankara, Türkiye</p>
-        </div>
+      <div style="margin-top:10px">
+        <a class="btn primary" href="/blog/">Tüm yazılar</a>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="split">
-        <div>© <span id="yil"></span> Savaş Gayaker</div>
+      <div class="row">
+        <div>© <span id="year"></span> Savaş Gayaker</div>
         <div>
-          <a href="#icerik">Yukarı çık</a>
-          <span class="notice"> • </span>
-          <a href="LICENSE" title="Opsiyonel">Lisans</a>
+          <a href="/contact.html">İletişim</a>
+          <span class="small"> • </span>
+          <a href="/akademi/">Akademi</a>
+          <span class="small"> • </span>
+          <a href="/consulting/">Danışmanlık</a>
         </div>
       </div>
-      <div class="notice" style="margin-top:8px;">
-        Bu sayfa GitHub Pages üzerinde statik olarak yayınlanmaktadır.
+
+      <div class="small" style="margin-top:8px;">
+        Statik site (GitHub Pages). Hızlı, temiz, mobil uyumlu.
       </div>
     </footer>
   </main>
 
-  <script>
-    document.getElementById("yil").textContent = new Date().getFullYear();
-  </script>
+  <!-- External JS -->
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>
-
