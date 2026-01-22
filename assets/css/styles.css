@@ -33,6 +33,19 @@ a:hover{opacity:.92}
 h1,h2,h3{margin:0 0 12px; letter-spacing:-.3px}
 p{margin:0 0 12px; color:var(--muted)}
 
+/* Skip link (erişilebilirlik) */
+.skip{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip:focus{
+  position:static; width:auto; height:auto; padding:10px; display:inline-block;
+  background: rgba(15,26,46,.9);
+  border:1px solid rgba(34,49,85,.9);
+  border-radius:12px;
+  margin:10px;
+}
+
+/* ---------------- TOPBAR / NAV ---------------- */
 .topbar{
   position:sticky; top:0; z-index:50;
   backdrop-filter: blur(10px);
@@ -59,7 +72,9 @@ p{margin:0 0 12px; color:var(--muted)}
   color:var(--muted); font-size:13px;
 }
 .menu a{
-  padding:8px 10px; border-radius:10px; border:1px solid transparent;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid transparent;
 }
 .menu a:hover{
   border-color: rgba(34,49,85,.8);
@@ -89,9 +104,8 @@ p{margin:0 0 12px; color:var(--muted)}
   .menu-btn{display:inline-flex; align-items:center; gap:8px}
 }
 
-.hero{
-  padding:46px 0 10px;
-}
+/* ---------------- HERO ---------------- */
+.hero{padding:46px 0 10px}
 .hero-grid{
   display:grid;
   grid-template-columns: 1.3fr .7fr;
@@ -102,6 +116,7 @@ p{margin:0 0 12px; color:var(--muted)}
   .hero-grid{grid-template-columns:1fr}
 }
 
+/* ---------------- PANELS / CARDS ---------------- */
 .panel{
   background: linear-gradient(180deg, rgba(14,25,48,.78), rgba(15,26,46,.45));
   border:1px solid rgba(34,49,85,.75);
@@ -164,6 +179,23 @@ p{margin:0 0 12px; color:var(--muted)}
   background: rgba(14,25,48,.30);
 }
 
+/* ---------------- QUICK IMAGE (Hızlı bağlantılar görseli) ---------------- */
+/* Bu sınıfı index.html'de <img class="quick-image"> olarak kullan */
+.quick-image{
+  width:100%;
+  height:130px;          /* küçük görünmesi için: 110-150 arası idealdir */
+  object-fit:cover;
+  border-radius:16px;
+  border:1px solid rgba(34,49,85,.75);
+  margin:10px 0 14px;
+  display:block;
+  background: rgba(15,26,46,.35);
+}
+@media (max-width: 860px){
+  .quick-image{ height:115px; }
+}
+
+/* ---------------- FOOTER ---------------- */
 .footer{
   padding:24px 0 40px;
   color: var(--muted);
@@ -173,50 +205,3 @@ p{margin:0 0 12px; color:var(--muted)}
 }
 .footer .row{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
 .small{font-size:12px; color:rgba(169,183,214,.85)}
-/* ---------- SLIDER (Hızlı bağlantılar) ---------- */
-
-.slider {
-  position: relative;
-  width: 100%;
-  height: 170px;
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgba(34,49,85,.75);
-  margin: 10px 0 14px;
-}
-
-.slides {
-  display: flex;
-  width: 1000%; /* 10 slide */
-  height: 100%;
-  transition: transform 0.6s ease;
-}
-
-.slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  flex: 0 0 100%;
-}
-
-.slider-dots {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-}
-
-.slider-dots .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.35);
-  cursor: pointer;
-}
-
-.slider-dots .dot.active {
-  background: rgba(255,255,255,.9);
-}
-
