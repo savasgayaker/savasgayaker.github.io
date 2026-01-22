@@ -56,4 +56,38 @@ function escapeHtml(s){
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
 }
+// ---------- SLIDER (Hızlı bağlantılar) ----------
+
+let currentSlide = 0;
+
+function initSlider() {
+  const slides = document.querySelector(".slides");
+  const dots = document.querySelectorAll(".slider-dots .dot");
+
+  if (!slides || dots.length === 0) return;
+
+  const total = dots.length;
+
+  function showSlide(index) {
+    currentSlide = index;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === index);
+    });
+  }
+
+  // Otomatik dönme
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % total;
+    showSlide(currentSlide);
+  }, 4000); // 4 saniyede bir
+
+  // Noktalara tıklayınca manuel geçiş
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => showSlide(index));
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initSlider);
 
